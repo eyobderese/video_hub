@@ -1,35 +1,18 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
-
-interface Game {
-  id: number;
-  name: string;
-}
-
-interface FatchGameResponse {
-  count: number;
-  result: Game[];
-}
+import { SimpleGrid } from "@chakra-ui/react";
+import useGame from "../hooks/useGame";
+import GameCard from "./GameCard";
 
 function GameGrid() {
-  const [game, setGame] = useState<Game[]>([]);
-  const [error, setError] = useState();
-
-  useEffect(() => {
-    apiClient
-      .get<FatchGameResponse>("/games")
-      .then((res) => setGame(res.data.result))
-      .catch((err) => setError(err.message));
-  });
+  const { game, error } = useGame();
 
   return (
     <>
       {error && <p>{error}</p>}
-      <ul>
+      <SimpleGrid column={3} spacing={10}>
         {game.map((g) => (
-          <li key={g.id}>{g.name}</li>
+          <GameCard key={g.id} game={g} />
         ))}
-      </ul>
+      </SimpleGrid>
     </>
   );
 }
