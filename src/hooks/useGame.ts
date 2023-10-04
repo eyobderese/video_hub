@@ -10,7 +10,7 @@ export interface Game {
 
 interface FatchGameResponse {
   count: number;
-  result: Game[];
+  results: Game[];
 }
 
 const useGame = () => {
@@ -21,7 +21,7 @@ const useGame = () => {
     const controler = new AbortController();
     apiClient
       .get<FatchGameResponse>("/games", { signal: controler.signal })
-      .then((res) => setGame(res.data.result))
+      .then((res) => setGame(res.data.results))
       .catch((err) => {
         if (err instanceof CanceledError) return;
         setError(err.message);
