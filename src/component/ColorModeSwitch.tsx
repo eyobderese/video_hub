@@ -7,9 +7,11 @@ function ColorModeSwitch() {
     <HStack>
       <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} />
       {colorMode == "dark" ? (
-        <Text>Dark Mood</Text>
+        <Text whiteSpace="nowrap">Dark Mood</Text>
       ) : (
-        <Text color="black">Light Mood</Text>
+        <Text color="black" whiteSpace="nowrap">
+          Light Mood
+        </Text>
       )}
     </HStack>
   );
