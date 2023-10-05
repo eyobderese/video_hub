@@ -1,3 +1,4 @@
+import placeholder from "../assets/img-placeholder.webp";
 const getCroppedImageUrl = (url: string) => {
   if (url) {
     const target = "media/";
@@ -6,7 +7,7 @@ const getCroppedImageUrl = (url: string) => {
     return url.slice(0, index) + "crop/600/400/" + url.slice(index);
   }
 
-  return "srcassetslogo (1).webp";
+  return placeholder;
 };
 
 export default getCroppedImageUrl;
