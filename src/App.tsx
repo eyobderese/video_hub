@@ -16,7 +16,7 @@ import GameGrid from "./component/GameGrid";
 import GenresList from "./component/GenresList";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./component/PlatformSelector";
-import { Platform } from "./hooks/useGame";
+import { Platform } from "./hooks/usePlatform";
 import SortSelector, { Sorter } from "./component/SortSelector";
 import GameHeading from "./component/GameHeading";
 

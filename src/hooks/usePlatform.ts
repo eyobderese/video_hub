@@ -3,7 +3,7 @@ import useData, { FatchResponse } from "../services/api-client";
 import apiClient from "../services/api-client";
 import { platform } from "../assets/platform";
 
-interface Platform {
+export interface Platform {
   id: number;
   name: string;
   slug: string;
