@@ -16,7 +16,7 @@ interface Props {
 }
 
 const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { Data } = useGenera();
+  const { data: Data } = useGenera();
 
   return (
     <>
@@ -24,7 +24,7 @@ const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
         Genres
       </Heading>
       <List>
-        {Data.map((genre) => (
+        {Data?.results.map((genre) => (
           <ListItem paddingY="5px">
             <HStack>
               <Image
