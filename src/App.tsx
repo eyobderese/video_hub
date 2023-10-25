@@ -22,7 +22,7 @@ import GameHeading from "./component/GameHeading";
 
 export interface GameQuery {
   genreID: number;
-  platform: Platform;
+  platformID: number;
   sortOrder: Sorter;
   element: string;
 }
@@ -60,8 +60,10 @@ function App() {
         <Flex paddingLeft={2} marginBottom={5}>
           <Box marginRight={2}>
             <PlatformSelector
-              onSelcet={(platform) => setGameQuery({ ...gameQuery, platform })}
-              platform={gameQuery.platform}
+              onSelcet={(platform) =>
+                setGameQuery({ ...gameQuery, platformID: platform.id })
+              }
+              platformID={gameQuery.platformID}
             />
           </Box>
           <SortSelector
