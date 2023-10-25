@@ -1,5 +1,6 @@
 export const platform = {
   count: 14,
+  next: null,
 
   results: [
     {

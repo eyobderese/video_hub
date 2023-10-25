@@ -1,5 +1,6 @@
 export const genres = {
   count: 19,
+  next: null,
 
   results: [
     {
