@@ -20,13 +20,6 @@ import { Platform } from "./hooks/usePlatform";
 import SortSelector, { Sorter } from "./component/SortSelector";
 import GameHeading from "./component/GameHeading";
 
-export interface GameQuery {
-  genreID: number;
-  platformID: number;
-  sortOrder: Sorter;
-  element: string;
-}
-
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
