@@ -17,12 +17,10 @@ import GenresList from "./component/GenresList";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./component/PlatformSelector";
 import { Platform } from "./hooks/usePlatform";
-import SortSelector, { Sorter } from "./component/SortSelector";
 import GameHeading from "./component/GameHeading";
+import SortSelector from "./component/SortSelector";
 
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-
   return (
     <Grid
       templateAreas={{
@@ -32,41 +30,24 @@ function App() {
       templateColumns={{ base: "1fr", lg: "200px 1fr" }}
     >
       <GridItem area="nav">
-        <NavBar
-          onSubmite={(element) => setGameQuery({ ...gameQuery, element })}
-        />
+        <NavBar />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" marginTop={10}>
-          <GenresList
-            onSelectGenre={(genre) =>
-              setGameQuery({ ...gameQuery, genreID: genre.id })
-            }
-            selectedGenreID={gameQuery.genreID}
-          />
+          <GenresList />
         </GridItem>
       </Show>
 
       <GridItem area="main" marginTop={10}>
-        <GameHeading gameQuery={gameQuery} />
+        <GameHeading />
 
         <Flex paddingLeft={2} marginBottom={5}>
           <Box marginRight={2}>
-            <PlatformSelector
-              onSelcet={(platform) =>
-                setGameQuery({ ...gameQuery, platformID: platform.id })
-              }
-              platformID={gameQuery.platformID}
-            />
+            <PlatformSelector />
           </Box>
-          <SortSelector
-            onSelectSortOrder={(sortOrder) =>
-              setGameQuery({ ...gameQuery, sortOrder })
-            }
-            sorter1={gameQuery.sortOrder}
-          />
+          <SortSelector />
         </Flex>
-        <GameGrid gameQuery={gameQuery} />
+        <GameGrid />
       </GridItem>
     </Grid>
   );
