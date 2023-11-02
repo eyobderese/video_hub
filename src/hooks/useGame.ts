@@ -3,7 +3,7 @@ import ms from "ms";
 import { FatchResponse } from "../services/api-client";
 import APIClient from "../services/api-client";
 import useGameQuery from "../store";
-import { Game } from "../Entity/Game";
+import Game from "../Entity/Game";
 
 const apiClient = new APIClient<Game>("/games");
 
