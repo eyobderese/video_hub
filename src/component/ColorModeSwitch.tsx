@@ -5,7 +5,12 @@ function ColorModeSwitch() {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
     <HStack>
-      <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} />
+      <Switch
+        isChecked={colorMode === "dark"}
+        onChange={toggleColorMode}
+        background={"black"}
+        borderRadius={10}
+      />
       {colorMode == "dark" ? (
         <Text whiteSpace="nowrap">Dark Mood</Text>
       ) : (
