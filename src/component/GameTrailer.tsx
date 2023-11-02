@@ -12,7 +12,7 @@ const GameTrailer = ({ gameId }: Props) => {
   if (error) throw error;
 
   return (
-    <Box marginTop={5}>
+    <Box padding={5}>
       <video
         width={600}
         src={data?.results[0]?.data[480]}
