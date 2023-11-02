@@ -25,6 +25,9 @@ class APIClient<T> {
       (res) => res.data
     );
   };
+
+  get = (id: string | number) =>
+    AxiosInstance.get<T>(this.endPoint + "/" + id).then((res) => res.data);
 }
 
 export default APIClient;
