@@ -7,6 +7,7 @@ import DefinationItem from "./DefinationItem";
 import { platform } from "../assets/platform";
 import CriticScore from "./CriticScore";
 import GameAttributes from "./GameAttributes";
+import GameTrailer from "./GameTrailer";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -22,7 +23,10 @@ const GameDetailPage = () => {
     <>
       <Heading paddingBottom={4}>{game?.name}</Heading>
       <ExpandableText mytext={game?.description_raw} />
-      <GameAttributes game={game} />
+      <SimpleGrid columns={2}>
+        <GameAttributes game={game} />
+        <GameTrailer gameId={game!.id} />
+      </SimpleGrid>
     </>
   );
 };
