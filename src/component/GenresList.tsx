@@ -1,4 +1,5 @@
-import useGenera, { Genre } from "../hooks/useGenres";
+import useGenera from "../hooks/useGenres";
+import { Genre } from "../Entity/Genre";
 import {
   Button,
   HStack,

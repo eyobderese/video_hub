@@ -2,7 +2,7 @@ import bull from "../assets/bulls-eye.webp";
 import tamb from "../assets/thumbs-up.webp";
 import meh from "../assets/meh.webp";
 import { Image, ImageProps } from "@chakra-ui/react";
-import { Game } from "../hooks/useGame";
+import { Game } from "../Entity/Game";
 
 interface Props {
   game: Game;
